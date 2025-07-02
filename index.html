@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeless Aura - Find your perfect fragrance</title>
+    <link rel="icon" type="image/x-icon" href="./logo/nav-logo.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        @keyframes colorBlink {
+            0%, 50% { 
+                background-color: transparent; 
+                color: inherit; 
+            }
+            51%, 100% { 
+                background-color: transparent; 
+                color: blue; 
+            }
+        }
+
+        .color-blink {
+            animation: colorBlink 3s infinite;
+        }
+
+        .color-blink:hover {
+            animation: none;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+
+        .animate-slide {
+            animation: slide 25s infinite ease-in-out;
+        }
+
+        .brands-container:hover .animate-slide {
+            animation-play-state: paused;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- navigation-section -->
+    <div class="bg-gray-100 flex flex-col md:flex-row h-auto md:h-18 p-4 md:p-0">
+        <div class="px-4 md:px-40 mb-4 md:mb-0">
+            <a href="" class="flex gap-2 items-center justify-center md:justify-start">
+                <img class="w-12 md:w-20" src="./logo/nav-logo.svg" alt="">
+                <img class="w-32 md:w-auto" src="./logo/Timeless Aura.svg" alt="">
+            </a>
+        </div>
+        <div class="flex flex-col md:flex-row w-full md:w-auto">
+            <div class="flex mb-4 md:mb-0 md:mt-5">
+                <input class="w-full md:w-[390px] h-10 p-5 px-8 rounded-lg outline-none" type="text" placeholder="Search for products, brands, categories..">
+                <div class="bg-yellow-600 w-10 h-10 text-center pt-2">
+                    <div class="fas fa-magnifying-glass"></div>
+                </div>
+            </div>
+            <div class="px-4 md:px-20 mt-2 items-center flex gap-4 md:gap-8 justify-center md:justify-start">
+                <img class="w-6" src="./logo/blackdoll.svg" alt="">
+                <img class="w-7" src="./logo/ShoppingCart.svg" alt="">
+                <button class="mx-2 md:mx-6 rounded-sm outline-[#E6A556] outline outline-offset-4 px-2 p-1 transition-all duration-300 hover:animate-none color-blink text-sm md:text-base">Login/Signup</button>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="bg-[#1A1A1C] p-4 flex justify-around hidden md:flex">
+            <ul class="text-white flex gap-[120px] hidden md:flex">
+                <li class="hover:text-[#E6A556]"><a href="#shop">Shop <span id="bar" class="fas fa-bars"></span></a></li>
+                <li class="hover:text-[#E6A556]"><a href="#featured products">Featured Products</a></li>
+                <li class="hover:text-[#E6A556]"><a href="#best sellers">Best Sellers</a></li>
+                <li class="hover:text-[#E6A556]"><a href="#brands">Brands</a></li>
+                <li class="hover:text-[#E6A556]"><a href="">Fragrance Guide</a></li>
+                <a href="">
+                    <div class="flex items-center gap-2">
+                        <img class="w-6" src="./logo/Question.svg" alt="">
+                        <li class="hover:text-[#E6A556]">Help</li>
+                        <div id="select" class="fas fa-angle-down mt-1"></div>
+                    </div>
+                </a>
+            </ul>
+        </div>
+
+        <details class="md:hidden bg-[#1A1A1C] p-2">
+            <summary class="list-none text-white cursor-pointer">
+                <div class="flex items-center justify-between">
+                    <span>Menu</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </div>
+            </summary>
+
+            <div class="mt-2 px-4 py-2 absolute z-30 bg-black w-full">
+                <ul class="text-white flex flex-col gap-4 text-lg text-center items-center">
+                    <li class="hover:text-[#E6A556]"><a href="#shop">Shop <span id="bar" class="fas fa-bars"></span></a></li>
+                    <li class="hover:text-[#E6A556]"><a href="#featured products">Featured Products</a></li>
+                    <li class="hover:text-[#E6A556]"><a href="#best sellers">Best Sellers</a></li>
+                    <li class="hover:text-[#E6A556]"><a href="#brands">Brands</a></li>
+                    <li class="hover:text-[#E6A556]"><a href="">Fragrance Guide</a></li>
+                    <li class="hover:text-[#E6A556]">
+                        <div class="flex items-center gap-2">
+                            <img class="w-6" src="./logo/Question.svg" alt="">
+                            <span>Help</span>
+                            <div id="select" class="fas fa-angle-down mt-1"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>         
+        </details>
+    </nav>
+    
+    <!-- hero-section -->
+    <div>
+        <div id="shop" class="bg-[url('./images/hero-bg.svg')] bg-cover h-[300px] md:h-[495px] overflow-y-auto overflow-x-auto bg-no-repeat relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-gray-1000/140 to-black/50 backdrop-blur-xs"></div>
+            <div class="text-white inset-0 absolute items-center flex justify-center px-4">
+                <div class="items-center text-center">
+                    <h2 class="text-2xl md:text-6xl leading-tight md:leading-20 tracking-wide">Find the fragrance that <span style="color: #E6A556; font-style: italic;">finds you</span></h2>
+                    <p class="text-sm md:text-3xl mt-4 md:mt-8">At Timeless Aura, we're not just selling perfumes—we're helping you find the <br class="hidden md:block"> scent that makes you feel like the best version of yourself.</p>
+                    <a href="" class="flex items-center justify-center mt-8 md:mt-16">
+                        <button class="bg-[#E6A556] p-2 md:p-4 px-8 md:px-12 items-center text-black font-medium text-lg md:text-xl rounded-xl">Shop Now</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div id="best sellers" class="bg-[#1B1517]">
+            <h4 class="text-xl md:text-2xl font-semibold px-4 md:px-32 pt-16 md:pt-32 text-[#E6A556]">Best Sellers</h4>
+
+            <!-- Mobile: 2 items per row, Desktop: 4 items per row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 px-4 md:px-8 mt-8">
+                <div class="flex flex-col h-full">
+                    <img class="w-full h-auto object-cover flex-shrink-0" src="./images/tomford-img.svg" alt="">
+                    <div class="bg-white text-black p-3 md:p-6 rounded-b-lg flex flex-col flex-grow">
+                        <h5 class="text-xs md:text-base mb-2 flex-grow">TOM FORD Costa Azzurra Parfum 3.4 oz</h5>
+                        <div class="flex gap-2 md:gap-6 items-center mt-2">
+                            <p><img class="w-16 md:w-24 mt-1" src="./logo/naira.png" alt=""></p>
+                            <p class="text-xs md:text-base">100ml</p>
+                        </div>
+                        <button class="mt-3 md:mt-5 rounded-sm outline-[#E6A556] outline outline-offset-2 p-1 px-2 md:px-24 text-[#E6A556] text-xs md:text-base w-full md:w-auto">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flex flex-col h-full">
+                    <img class="w-full h-auto object-cover flex-shrink-0" src="./images/roguelove-img.svg" alt="">
+                    <div class="bg-white text-black p-3 md:p-6 rounded-b-lg flex flex-col flex-grow">
+                        <h5 class="text-xs md:text-base mb-2 flex-grow">Rihanna Rogue Love EDP For Women</h5>
+                        <div class="flex gap-2 md:gap-6 items-center mt-2">
+                            <p><img class="w-16 md:w-24 mt-1" src="./logo/naira.png" alt=""></p>
+                            <p class="text-xs md:text-base">125ml</p>
+                        </div>
+                        <button class="mt-3 md:mt-5 rounded-sm outline-[#E6A556] outline outline-offset-2 p-1 px-2 md:px-24 text-[#E6A556] text-xs md:text-base w-full md:w-auto">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flex flex-col h-full">
+                    <img class="w-full h-auto object-cover flex-shrink-0" src="./images/Pdt Image.svg" alt="">
+                    <div class="bg-white text-black p-3 md:p-6 rounded-b-lg flex flex-col flex-grow">
+                        <h5 class="text-xs md:text-base mb-2 flex-grow">Dior Sauvage Eau de Toilette Spray Men..</h5>
+                        <div class="flex gap-2 md:gap-6 items-center mt-2">
+                            <p><img class="w-16 md:w-24 mt-1" src="./logo/naira.png" alt=""></p>
+                            <p class="text-xs md:text-base">100ml</p>
+                        </div>
+                        <button class="mt-3 md:mt-5 rounded-sm outline-[#E6A556] outline outline-offset-2 p-1 px-2 md:px-24 text-[#E6A556] text-xs md:text-base w-full md:w-auto">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flex flex-col h-full">
+                    <img class="w-full h-auto object-cover flex-shrink-0" src="./images/de-nuit.svg" alt="">
+                    <div class="bg-white text-black p-3 md:p-6 rounded-b-lg flex flex-col flex-grow">
+                        <h5 class="text-xs md:text-base mb-2 flex-grow">Armaf Club De Nuit Intense Man EDT</h5>
+                        <div class="flex gap-2 md:gap-6 items-center mt-2">
+                            <p><img class="w-16 md:w-24 mt-1" src="./logo/naira.png" alt=""></p>
+                            <p class="text-xs md:text-base">105ml</p>
+                        </div>
+                        <button class="mt-3 md:mt-5 rounded-sm outline-[#E6A556] outline outline-offset-2 p-1 px-2 md:px-24 text-[#E6A556] text-xs md:text-base w-full md:w-auto">Add to Cart</button>
+                    </div>
+                </div>
+            </div> 
+            
+            <div class="flex justify-center mt-12 md:mt-20 px-4">
+                <button class="bg-[#E6A556] p-3 md:p-4 px-8 md:px-12 items-center text-black font-medium text-base md:text-lg rounded-xl">View All</button>
+            </div>
+            
+            <div id="featured products">
+               <h4 class="text-xl md:text-2xl font-semibold px-4 md:px-32 pt-16 md:pt-32 text-[#E6A556]">Shop by Category</h4>
+            </div>
+
+            <!-- Mobile: 2 items per row, Desktop: 4 items per row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 px-4 md:px-8 mt-8">
+                <div class="relative">
+                    <img class="w-full h-auto object-cover" src="./images/forHer-img.svg" alt="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-bold drop-shadow-lg shadow-black text-shadow-lg z-10">For Her Collection</h5>
+                </div>
+                <div class="relative">
+                    <img class="w-full h-auto object-cover" src="./images/forHim-img.svg" alt="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">For Him Collection</h5>
+                </div>
+                <div class="relative">
+                    <img class="w-full h-auto object-cover" src="./images/vintage-img.svg" alt="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">Vintage Collection</h5>
+                </div>
+                <div class="relative">
+                    <img class="w-full h-auto object-cover" src="./images/basic-img.svg" alt="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">Basic/Everyday Collection</h5>
+                </div>
+                <div class="relative">
+                    <img class="w-full h-auto object-cover" src="./images/unisex-img.svg" alt="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">Unisex Collection</h5>
+                </div>
+                <div class="relative">
+                    <img class="w-full h-auto object-cover" src="./images/giftset-img.svg" alt="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <h5 class="absolute bottom-[15px] md:bottom-[27px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">Gift Sets</h5>
+                </div>
+                <div class="relative">
+                    <img class="w-full h-auto object-cover" src="./images/travelsize-img.svg" alt="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">Travel Size</h5>
+                </div>
+                <div class="relative">
+                    <img class="w-full h-auto object-cover" src="./images/special-img.svg" alt="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">Special Occasions</h5>
+                </div>
+            </div>
+
+            <div id="brands">
+               <h4 class="text-2xl md:text-3xl font-semibold px-4 md:px-32 pt-16 md:pt-32 text-[#E6A556]">Brands</h4>
+            </div>
+
+            <!-- Brands section with improved mobile responsiveness -->
+            <div class="brands-container mt-8 py-8 overflow-hidden">
+                <div class="brands-track flex animate-slide">
+                    <div class="flex items-center gap-4 md:gap-6 px-4 min-w-full">
+                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/chanel.svg" alt="Chanel">
+                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/dior.svg" alt="Dior">
+                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/tomford.svg" alt="Tom Ford">
+                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/hermes.svg" alt="Hermes">
+                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/asad.svg" alt="Asad">
+                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/calvin-klein.svg" alt="Calvin Klein">
+
+                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/giorgio-armani.svg" alt="Giorgio Armani">
+                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/versace.svg" alt="Versace">
+                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/azzaro.svg" alt="Azzaro">
+                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/givenchy.svg" alt="Givenchy">
+                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/rabanne.svg" alt="Rabanne">
+                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/chanel.svg" alt="Chanel">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add some bottom padding to the main container -->
+            <div class="pb-8 md:pb-16"></div>
+        </div>
+    </div>
+
+</body>
+</html>
