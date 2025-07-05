@@ -30,6 +30,10 @@
             animation: none;
         }
 
+        #shop {
+        margin-top: -1px !important;
+      }
+
         @keyframes slide {
             0% { transform: translateX(0); }
             50% { transform: translateX(-100%); }
@@ -37,77 +41,84 @@
         }
 
         .animate-slide {
-            animation: slide 25s infinite ease-in-out;
+            animation: slide 20s infinite ease-in-out;
         }
 
         .brands-container:hover .animate-slide {
             animation-play-state: paused;
         }
+
+        /* Custom responsive breakpoints */
+        @media (min-width: 640px) and (max-width: 767px) {
+            .sm-only\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
     </style>
 
 </head>
-<body>
+<body class="overflow-x-hidden">
     <!-- navigation-section -->
-    <div class="bg-gray-100 flex flex-col md:flex-row h-auto md:h-18 p-4 md:p-0">
-        <div class="px-4 md:px-40 mb-4 md:mb-0">
-            <a href="" class="flex gap-2 items-center justify-center md:justify-start">
-                <img class="w-12 md:w-20" src="./logo/nav-logo.svg" alt="">
-                <img class="w-32 md:w-auto" src="./logo/Timeless Aura.svg" alt="">
+    <div class="bg-gray-100 flex flex-col lg:flex-row h-auto p-2 sm:p-3 md:p-4 lg:p-0">
+        <div class="px-2 sm:px-4 md:px-8 lg:px-40 mb-2 sm:mb-3 md:mb-4 lg:mb-0 flex justify-center lg:justify-start">
+            <a href="" class="flex gap-2 items-center">
+                <img class="w-10 sm:w-12 md:w-16 lg:w-20" src="./logo/nav-logo.svg" alt="">
+                <img class="w-28 sm:w-32 md:w-40 lg:w-auto" src="./logo/Timeless Aura.svg" alt="">
             </a>
         </div>
-        <div class="flex flex-col md:flex-row w-full md:w-auto">
-            <div class="flex mb-4 md:mb-0 md:mt-5">
-                <input class="w-full md:w-[390px] h-10 p-5 px-8 rounded-lg outline-none" type="text" placeholder="Search for products, brands, categories..">
-                <div class="bg-yellow-600 w-10 h-10 text-center pt-2">
-                    <div class="fas fa-magnifying-glass"></div>
+        <div class="flex flex-col lg:flex-row w-full lg:w-auto items-center">
+            <div class="flex mb-2 sm:mb-3 md:mb-4 lg:mb-0 lg:mt-5 w-full lg:w-auto justify-center">
+                <input class="w-full sm:w-80 md:w-96 lg:w-[390px] h-8 sm:h-9 md:h-10 p-3 sm:p-4 md:p-5 px-4 sm:px-6 md:px-8 rounded-lg outline-none text-sm sm:text-base" type="text" placeholder="Search for products, brands, categories..">
+                <div class="bg-yellow-600 w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 flex items-center justify-center">
+                    <div class="fas fa-magnifying-glass text-xs sm:text-sm md:text-base"></div>
                 </div>
             </div>
-            <div class="px-4 md:px-20 mt-2 items-center flex gap-4 md:gap-8 justify-center md:justify-start">
-                <img class="w-6" src="./logo/blackdoll.svg" alt="">
-                <img class="w-7" src="./logo/ShoppingCart.svg" alt="">
-                <button class="mx-2 md:mx-6 rounded-sm outline-[#E6A556] outline outline-offset-4 px-2 p-1 transition-all duration-300 hover:animate-none color-blink text-sm md:text-base">Login/Signup</button>
+            <div class="px-2 sm:px-4 md:px-8 lg:px-20 mt-1 sm:mt-2 items-center flex gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center">
+                <img class="w-5 sm:w-6" src="./logo/blackdoll.svg" alt="">
+                <img class="w-6 sm:w-7" src="./logo/ShoppingCart.svg" alt="">
+                <button class="mx-1 sm:mx-2 md:mx-4 lg:mx-6 rounded-sm outline-[#E6A556] outline outline-offset-2 sm:outline-offset-3 md:outline-offset-4 px-2 sm:px-3 md:px-4 p-1 transition-all duration-300 hover:animate-none color-blink text-xs sm:text-sm md:text-sm lg:text-base">Login/Signup</button>
             </div>
         </div>
     </div>
 
     <nav>
-        <div class="bg-[#1A1A1C] p-4 flex justify-around hidden md:flex">
-            <ul class="text-white flex gap-[120px] hidden md:flex">
-                <li class="hover:text-[#E6A556]"><a href="#shop">Shop <span id="bar" class="fas fa-bars"></span></a></li>
-                <li class="hover:text-[#E6A556]"><a href="#featured products">Featured Products</a></li>
-                <li class="hover:text-[#E6A556]"><a href="#best sellers">Best Sellers</a></li>
-                <li class="hover:text-[#E6A556]"><a href="#brands">Brands</a></li>
-                <li class="hover:text-[#E6A556]"><a href="">Fragrance Guide</a></li>
+        <div class="bg-[#1A1A1C] p-3 sm:p-4 justify-around hidden lg:flex">
+            <ul class="text-white flex gap-8 xl:gap-[120px] text-sm xl:text-base">
+                <li class="hover:text-[#E6A556] transition-colors"><a href="#shop">Shop <span id="bar" class="fas fa-bars"></span></a></li>
+                <li class="hover:text-[#E6A556] transition-colors"><a href="#featured products">Featured Products</a></li>
+                <li class="hover:text-[#E6A556] transition-colors"><a href="#best sellers">Best Sellers</a></li>
+                <li class="hover:text-[#E6A556] transition-colors"><a href="#brands">Brands</a></li>
+                <li class="hover:text-[#E6A556] transition-colors"><a href="">Fragrance Guide</a></li>
                 <a href="">
                     <div class="flex items-center gap-2">
-                        <img class="w-6" src="./logo/Question.svg" alt="">
-                        <li class="hover:text-[#E6A556]">Help</li>
+                        <img class="w-5 sm:w-6" src="./logo/Question.svg" alt="">
+                        <li class="hover:text-[#E6A556] transition-colors">Help</li>
                         <div id="select" class="fas fa-angle-down mt-1"></div>
                     </div>
                 </a>
             </ul>
         </div>
 
-        <details class="md:hidden bg-[#1A1A1C] p-2">
+        <details class="lg:hidden bg-[#1A1A1C] p-2 sm:p-3">
             <summary class="list-none text-white cursor-pointer">
                 <div class="flex items-center justify-between">
-                    <span>Menu</span>
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span class="text-sm sm:text-base">Menu</span>
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </div>
             </summary>
 
-            <div class="mt-2 px-4 py-2 absolute z-30 bg-black w-full">
-                <ul class="text-white flex flex-col gap-4 text-lg text-center items-center">
-                    <li class="hover:text-[#E6A556]"><a href="#shop">Shop <span id="bar" class="fas fa-bars"></span></a></li>
-                    <li class="hover:text-[#E6A556]"><a href="#featured products">Featured Products</a></li>
-                    <li class="hover:text-[#E6A556]"><a href="#best sellers">Best Sellers</a></li>
-                    <li class="hover:text-[#E6A556]"><a href="#brands">Brands</a></li>
-                    <li class="hover:text-[#E6A556]"><a href="">Fragrance Guide</a></li>
-                    <li class="hover:text-[#E6A556]">
+            <div class="mt-2 pt-6 px-4 pb-6 bg-black absolute z-40 left-0 w-full items-center">
+                <ul class="text-white flex text-center items-center w-full flex-col gap-5 sm:gap-4 text-base sm:text-lg">
+                    <li class="hover:text-[#E6A556] transition-colors"><a href="#shop">Shop <span id="bar" class="fas fa-bars"></span></a></li>
+                    <li class="hover:text-[#E6A556] transition-colors"><a href="#featured products">Featured Products</a></li>
+                    <li class="hover:text-[#E6A556] transition-colors"><a href="#best sellers">Best Sellers</a></li>
+                    <li class="hover:text-[#E6A556] transition-colors"><a href="#brands">Brands</a></li>
+                    <li class="hover:text-[#E6A556] transition-colors"><a href="">Fragrance Guide</a></li>
+                    <li class="hover:text-[#E6A556] transition-colors">
                         <div class="flex items-center gap-2">
-                            <img class="w-6" src="./logo/Question.svg" alt="">
+                            <img class="w-5 sm:w-6" src="./logo/Question.svg" alt="">
                             <span>Help</span>
                             <div id="select" class="fas fa-angle-down mt-1"></div>
                         </div>
@@ -119,15 +130,22 @@
     
     <!-- hero-section -->
     <div>
-        <div id="shop" class="bg-[url('./images/hero-bg.svg')] bg-cover h-[300px] md:h-[495px] overflow-y-auto overflow-x-auto bg-no-repeat relative">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-gray-1000/140 to-black/50 backdrop-blur-xs"></div>
-            <div class="text-white inset-0 absolute items-center flex justify-center px-4">
-                <div class="items-center text-center">
-                    <h2 class="text-2xl md:text-6xl leading-tight md:leading-20 tracking-wide">Find the fragrance that <span style="color: #E6A556; font-style: italic;">finds you</span></h2>
-                    <p class="text-sm md:text-3xl mt-4 md:mt-8">At Timeless Aura, we're not just selling perfumes—we're helping you find the <br class="hidden md:block"> scent that makes you feel like the best version of yourself.</p>
-                    <a href="" class="flex items-center justify-center mt-8 md:mt-16">
-                        <button class="bg-[#E6A556] p-2 md:p-4 px-8 md:px-12 items-center text-black font-medium text-lg md:text-xl rounded-xl">Shop Now</button>
-                    </a>
+        <div id="shop" class="bg-[url('./images/hero-bg.svg')] bg-cover bg-center h-[250px] sm:h-[300px] md:h-[400px] lg:h-[450px] xl:h-[495px] bg-no-repeat relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/60"></div>
+            <div class="text-white absolute inset-0 flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8">
+                <div class="text-center max-w-5xl mx-auto">
+                    <h2 class="text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-6xl leading-tight font-medium tracking-wide">
+                        Find the fragrance that <span style="color: #E6A556; font-style: italic;">finds you</span>
+                    </h2>
+                    <p class="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-3xl mt-3 sm:mt-4 md:mt-6 lg:mt-8 leading-relaxed">
+                        At Timeless Aura, we're not just selling perfumes—we're helping you find the 
+                        <br class="hidden md:block"> scent that makes you feel like the best version of yourself.
+                    </p>
+                    <div class="mt-6 sm:mt-8 md:mt-12 lg:mt-16">
+                        <button class="bg-[#E6A556] hover:bg-[#d4944a] transition-colors p-2 sm:p-3 md:p-3 lg:p-4 px-6 sm:px-8 md:px-10 lg:px-12 text-black font-medium text-sm sm:text-base md:text-lg lg:text-xl rounded-xl shadow-lg">
+                            Shop Now
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,135 +153,160 @@
 
     <div>
         <div id="best sellers" class="bg-[#1B1517]">
-            <h4 class="text-xl md:text-2xl font-semibold px-4 md:px-32 pt-16 md:pt-32 text-[#E6A556]">Best Sellers</h4>
+            <h4 class="text-lg sm:text-xl md:text-2xl lg:text-2xl font-semibold px-3 sm:px-4 md:px-8 lg:px-16 xl:px-32 pt-8 sm:pt-12 md:pt-20 lg:pt-24 xl:pt-32 text-[#E6A556]">Best Sellers</h4>
 
-            <!-- Mobile: 2 items per row, Desktop: 4 items per row -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 px-4 md:px-8 mt-8">
-                <div class="flex flex-col h-full">
+            <!-- Responsive grid: Mobile: 2 cols, Small: 2 cols, Medium: 3 cols, Large+: 4 cols -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-3 md:gap-4 lg:gap-6 px-3 sm:px-4 md:px-6 lg:px-8 mt-6 sm:mt-8">
+                <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img class="w-full h-auto object-cover flex-shrink-0" src="./images/tomford-img.svg" alt="">
-                    <div class="bg-white text-black p-3 md:p-6 rounded-b-lg flex flex-col flex-grow">
-                        <h5 class="text-xs md:text-base mb-2 flex-grow">TOM FORD Costa Azzurra Parfum 3.4 oz</h5>
-                        <div class="flex gap-2 md:gap-6 items-center mt-2">
-                            <p><img class="w-16 md:w-24 mt-1" src="./logo/naira.png" alt=""></p>
-                            <p class="text-xs md:text-base">100ml</p>
+                    <div class="text-black p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col flex-grow">
+                        <h5 class="text-xs sm:text-sm md:text-sm lg:text-base mb-2 flex-grow leading-tight">TOM FORD Costa Azzurra Parfum 3.4 oz</h5>
+                        <div class="flex gap-2 sm:gap-3 md:gap-4 lg:gap-6 items-center mt-2">
+                            <img class="w-12 sm:w-14 md:w-18 lg:w-20 xl:w-24 mt-1" src="./logo/naira.png" alt="">
+                            <p class="text-xs sm:text-sm md:text-sm lg:text-base">100ml</p>
                         </div>
-                        <button class="mt-3 md:mt-5 rounded-sm outline-[#E6A556] outline outline-offset-2 p-1 px-2 md:px-24 text-[#E6A556] text-xs md:text-base w-full md:w-auto">Add to Cart</button>
+                        <button class="mt-2 sm:mt-3 md:mt-4 lg:mt-5 rounded-sm outline-[#E6A556] outline outline-offset-2 p-1 sm:p-2 text-[#E6A556] text-xs sm:text-sm md:text-sm lg:text-base w-full text-center hover:bg-[#E6A556] hover:text-black transition-colors">
+                            Add to Cart
+                        </button>
                     </div>
                 </div>
-                <div class="flex flex-col h-full">
+                <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img class="w-full h-auto object-cover flex-shrink-0" src="./images/roguelove-img.svg" alt="">
-                    <div class="bg-white text-black p-3 md:p-6 rounded-b-lg flex flex-col flex-grow">
-                        <h5 class="text-xs md:text-base mb-2 flex-grow">Rihanna Rogue Love EDP For Women</h5>
-                        <div class="flex gap-2 md:gap-6 items-center mt-2">
-                            <p><img class="w-16 md:w-24 mt-1" src="./logo/naira.png" alt=""></p>
-                            <p class="text-xs md:text-base">125ml</p>
+                    <div class="text-black p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col flex-grow">
+                        <h5 class="text-xs sm:text-sm md:text-sm lg:text-base mb-2 flex-grow leading-tight">Rihanna Rogue Love EDP For Women</h5>
+                        <div class="flex gap-2 sm:gap-3 md:gap-4 lg:gap-6 items-center mt-2">
+                            <img class="w-12 sm:w-14 md:w-18 lg:w-20 xl:w-24 mt-1" src="./logo/naira.png" alt="">
+                            <p class="text-xs sm:text-sm md:text-sm lg:text-base">125ml</p>
                         </div>
-                        <button class="mt-3 md:mt-5 rounded-sm outline-[#E6A556] outline outline-offset-2 p-1 px-2 md:px-24 text-[#E6A556] text-xs md:text-base w-full md:w-auto">Add to Cart</button>
+                        <button class="mt-2 sm:mt-3 md:mt-4 lg:mt-5 rounded-sm outline-[#E6A556] outline outline-offset-2 p-1 sm:p-2 text-[#E6A556] text-xs sm:text-sm md:text-sm lg:text-base w-full text-center hover:bg-[#E6A556] hover:text-black transition-colors">
+                            Add to Cart
+                        </button>
                     </div>
                 </div>
-                <div class="flex flex-col h-full">
+                <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img class="w-full h-auto object-cover flex-shrink-0" src="./images/Pdt Image.svg" alt="">
-                    <div class="bg-white text-black p-3 md:p-6 rounded-b-lg flex flex-col flex-grow">
-                        <h5 class="text-xs md:text-base mb-2 flex-grow">Dior Sauvage Eau de Toilette Spray Men..</h5>
-                        <div class="flex gap-2 md:gap-6 items-center mt-2">
-                            <p><img class="w-16 md:w-24 mt-1" src="./logo/naira.png" alt=""></p>
-                            <p class="text-xs md:text-base">100ml</p>
+                    <div class="text-black p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col flex-grow">
+                        <h5 class="text-xs sm:text-sm md:text-sm lg:text-base mb-2 flex-grow leading-tight">Dior Sauvage Eau de Toilette Spray Men..</h5>
+                        <div class="flex gap-2 sm:gap-3 md:gap-4 lg:gap-6 items-center mt-2">
+                            <img class="w-12 sm:w-14 md:w-18 lg:w-20 xl:w-24 mt-1" src="./logo/naira.png" alt="">
+                            <p class="text-xs sm:text-sm md:text-sm lg:text-base">100ml</p>
                         </div>
-                        <button class="mt-3 md:mt-5 rounded-sm outline-[#E6A556] outline outline-offset-2 p-1 px-2 md:px-24 text-[#E6A556] text-xs md:text-base w-full md:w-auto">Add to Cart</button>
+                        <button class="mt-2 sm:mt-3 md:mt-4 lg:mt-5 rounded-sm outline-[#E6A556] outline outline-offset-2 p-1 sm:p-2 text-[#E6A556] text-xs sm:text-sm md:text-sm lg:text-base w-full text-center hover:bg-[#E6A556] hover:text-black transition-colors">
+                            Add to Cart
+                        </button>
                     </div>
                 </div>
-                <div class="flex flex-col h-full">
+                <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img class="w-full h-auto object-cover flex-shrink-0" src="./images/de-nuit.svg" alt="">
-                    <div class="bg-white text-black p-3 md:p-6 rounded-b-lg flex flex-col flex-grow">
-                        <h5 class="text-xs md:text-base mb-2 flex-grow">Armaf Club De Nuit Intense Man EDT</h5>
-                        <div class="flex gap-2 md:gap-6 items-center mt-2">
-                            <p><img class="w-16 md:w-24 mt-1" src="./logo/naira.png" alt=""></p>
-                            <p class="text-xs md:text-base">105ml</p>
+                    <div class="text-black p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col flex-grow">
+                        <h5 class="text-xs sm:text-sm md:text-sm lg:text-base mb-2 flex-grow leading-tight">Armaf Club De Nuit Intense Man EDT</h5>
+                        <div class="flex gap-2 sm:gap-3 md:gap-4 lg:gap-6 items-center mt-2">
+                            <img class="w-12 sm:w-14 md:w-18 lg:w-20 xl:w-24 mt-1" src="./logo/naira.png" alt="">
+                            <p class="text-xs sm:text-sm md:text-sm lg:text-base">105ml</p>
                         </div>
-                        <button class="mt-3 md:mt-5 rounded-sm outline-[#E6A556] outline outline-offset-2 p-1 px-2 md:px-24 text-[#E6A556] text-xs md:text-base w-full md:w-auto">Add to Cart</button>
+                        <button class="mt-2 sm:mt-3 md:mt-4 lg:mt-5 rounded-sm outline-[#E6A556] outline outline-offset-2 p-1 sm:p-2 text-[#E6A556] text-xs sm:text-sm md:text-sm lg:text-base w-full text-center hover:bg-[#E6A556] hover:text-black transition-colors">
+                            Add to Cart
+                        </button>
                     </div>
                 </div>
             </div> 
             
-            <div class="flex justify-center mt-12 md:mt-20 px-4">
-                <button class="bg-[#E6A556] p-3 md:p-4 px-8 md:px-12 items-center text-black font-medium text-base md:text-lg rounded-xl">View All</button>
+            <div class="flex justify-center mt-8 sm:mt-10 md:mt-16 lg:mt-20 px-3 sm:px-4">
+                <button class="bg-[#E6A556] hover:bg-[#d4944a] transition-colors p-2 sm:p-3 md:p-3 lg:p-4 px-6 sm:px-8 md:px-10 lg:px-12 text-black font-medium text-sm sm:text-base md:text-lg lg:text-lg rounded-xl shadow-lg">
+                    View All
+                </button>
             </div>
             
             <div id="featured products">
-               <h4 class="text-xl md:text-2xl font-semibold px-4 md:px-32 pt-16 md:pt-32 text-[#E6A556]">Shop by Category</h4>
+               <h4 class="text-lg sm:text-xl md:text-2xl lg:text-2xl font-semibold px-3 sm:px-4 md:px-8 lg:px-16 xl:px-32 pt-8 sm:pt-12 md:pt-20 lg:pt-24 xl:pt-32 text-[#E6A556]">Shop by Category</h4>
             </div>
 
-            <!-- Mobile: 2 items per row, Desktop: 4 items per row -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 px-4 md:px-8 mt-8">
-                <div class="relative">
+            <!-- Responsive grid for categories -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-3 md:gap-4 lg:gap-6 px-3 sm:px-4 md:px-6 lg:px-8 mt-6 sm:mt-8">
+                <div class="relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img class="w-full h-auto object-cover" src="./images/forHer-img.svg" alt="">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-bold drop-shadow-lg shadow-black text-shadow-lg z-10">For Her Collection</h5>
+                    <h5 class="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-6 text-white left-2 sm:left-3 md:left-4 lg:left-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-bold drop-shadow-lg z-10 leading-tight">
+                        For Her Collection
+                    </h5>
                 </div>
-                <div class="relative">
+                <div class="relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img class="w-full h-auto object-cover" src="./images/forHim-img.svg" alt="">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">For Him Collection</h5>
+                    <h5 class="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-6 text-white left-2 sm:left-3 md:left-4 lg:left-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-medium drop-shadow-lg z-10 leading-tight">
+                        For Him Collection
+                    </h5>
                 </div>
-                <div class="relative">
+                <div class="relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img class="w-full h-auto object-cover" src="./images/vintage-img.svg" alt="">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">Vintage Collection</h5>
+                    <h5 class="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-6 text-white left-2 sm:left-3 md:left-4 lg:left-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-medium drop-shadow-lg z-10 leading-tight">
+                        Vintage Collection
+                    </h5>
                 </div>
-                <div class="relative">
+                <div class="relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img class="w-full h-auto object-cover" src="./images/basic-img.svg" alt="">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">Basic/Everyday Collection</h5>
+                    <h5 class="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-6 text-white left-2 sm:left-3 md:left-4 lg:left-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-medium drop-shadow-lg z-10 leading-tight">
+                        Basic/Everyday Collection
+                    </h5>
                 </div>
-                <div class="relative">
+                <div class="relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img class="w-full h-auto object-cover" src="./images/unisex-img.svg" alt="">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">Unisex Collection</h5>
+                    <h5 class="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-6 text-white left-2 sm:left-3 md:left-4 lg:left-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-medium drop-shadow-lg z-10 leading-tight">
+                        Unisex Collection
+                    </h5>
                 </div>
-                <div class="relative">
+                <div class="relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img class="w-full h-auto object-cover" src="./images/giftset-img.svg" alt="">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                    <h5 class="absolute bottom-[15px] md:bottom-[27px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">Gift Sets</h5>
+                    <h5 class="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-6 text-white left-2 sm:left-3 md:left-4 lg:left-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-medium drop-shadow-lg z-10 leading-tight">
+                        Gift Sets
+                    </h5>
                 </div>
-                <div class="relative">
+                <div class="relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img class="w-full h-auto object-cover" src="./images/travelsize-img.svg" alt="">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">Travel Size</h5>
+                    <h5 class="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-6 text-white left-2 sm:left-3 md:left-4 lg:left-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-medium drop-shadow-lg z-10 leading-tight">
+                        Travel Size
+                    </h5>
                 </div>
-                <div class="relative">
+                <div class="relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img class="w-full h-auto object-cover" src="./images/special-img.svg" alt="">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                    <h5 class="absolute bottom-[15px] md:bottom-[30px] text-white left-[10px] md:left-[20px] text-sm md:text-2xl font-medium">Special Occasions</h5>
+                    <h5 class="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-6 text-white left-2 sm:left-3 md:left-4 lg:left-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-medium drop-shadow-lg z-10 leading-tight">
+                        Special Occasions
+                    </h5>
                 </div>
             </div>
 
             <div id="brands">
-               <h4 class="text-2xl md:text-3xl font-semibold px-4 md:px-32 pt-16 md:pt-32 text-[#E6A556]">Brands</h4>
+               <h4 class="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold px-3 sm:px-4 md:px-8 lg:px-16 xl:px-32 pt-8 sm:pt-12 md:pt-20 lg:pt-24 xl:pt-32 text-[#E6A556]">Brands</h4>
             </div>
 
-            <!-- Brands section with improved mobile responsiveness -->
-            <div class="brands-container mt-8 py-8 overflow-hidden">
+            <!-- Brands section with full responsiveness -->
+            <div class="brands-container mt-6 sm:mt-8 py-4 sm:py-6 md:py-8 overflow-hidden">
                 <div class="brands-track flex animate-slide">
-                    <div class="flex items-center gap-4 md:gap-6 px-4 min-w-full">
-                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/chanel.svg" alt="Chanel">
-                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/dior.svg" alt="Dior">
-                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/tomford.svg" alt="Tom Ford">
-                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/hermes.svg" alt="Hermes">
-                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/asad.svg" alt="Asad">
-                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/calvin-klein.svg" alt="Calvin Klein">
-
-                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/giorgio-armani.svg" alt="Giorgio Armani">
-                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/versace.svg" alt="Versace">
-                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/azzaro.svg" alt="Azzaro">
-                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/givenchy.svg" alt="Givenchy">
-                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/rabanne.svg" alt="Rabanne">
-                        <img class="h-8 md:h-32 w-1/6 object-contain flex-shrink-0" src="./images/chanel.svg" alt="Chanel">
+                    <div class="flex items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 px-3 sm:px-4 min-w-full">
+                        <img class="h-6 sm:h-8 md:h-16 lg:h-20 xl:h-32 w-1/6 object-contain flex-shrink-0" src="./images/chanel.svg" alt="Chanel">
+                        <img class="h-6 sm:h-8 md:h-16 lg:h-20 xl:h-32 w-1/6 object-contain flex-shrink-0" src="./images/dior.svg" alt="Dior">
+                        <img class="h-6 sm:h-8 md:h-16 lg:h-20 xl:h-32 w-1/6 object-contain flex-shrink-0" src="./images/tomford.svg" alt="Tom Ford">
+                        <img class="h-6 sm:h-8 md:h-16 lg:h-20 xl:h-32 w-1/6 object-contain flex-shrink-0" src="./images/hermes.svg" alt="Hermes">
+                        <img class="h-6 sm:h-8 md:h-16 lg:h-20 xl:h-32 w-1/6 object-contain flex-shrink-0" src="./images/asad.svg" alt="Asad">
+                        <img class="h-6 sm:h-8 md:h-16 lg:h-20 xl:h-32 w-1/6 object-contain flex-shrink-0" src="./images/calvin-klein.svg" alt="Calvin Klein">
+                        <img class="h-6 sm:h-8 md:h-16 lg:h-20 xl:h-32 w-1/6 object-contain flex-shrink-0" src="./images/giorgio-armani.svg" alt="Giorgio Armani">
+                        <img class="h-6 sm:h-8 md:h-16 lg:h-20 xl:h-32 w-1/6 object-contain flex-shrink-0" src="./images/versace.svg" alt="Versace">
+                        <img class="h-6 sm:h-8 md:h-16 lg:h-20 xl:h-32 w-1/6 object-contain flex-shrink-0" src="./images/azzaro.svg" alt="Azzaro">
+                        <img class="h-6 sm:h-8 md:h-16 lg:h-20 xl:h-32 w-1/6 object-contain flex-shrink-0" src="./images/givenchy.svg" alt="Givenchy">
+                        <img class="h-6 sm:h-8 md:h-16 lg:h-20 xl:h-32 w-1/6 object-contain flex-shrink-0" src="./images/rabanne.svg" alt="Rabanne">
+                        <img class="h-6 sm:h-8 md:h-16 lg:h-20 xl:h-32 w-1/6 object-contain flex-shrink-0" src="./images/chanel.svg" alt="Chanel">
                     </div>
                 </div>
             </div>
 
-            <!-- Add some bottom padding to the main container -->
-            <div class="pb-8 md:pb-16"></div>
+            <!-- Bottom padding with responsive spacing -->
+            <div class="pb-6 sm:pb-8 md:pb-12 lg:pb-16"></div>
         </div>
     </div>
 
